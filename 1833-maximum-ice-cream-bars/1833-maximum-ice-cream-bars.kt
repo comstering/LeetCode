@@ -19,7 +19,7 @@ class Solution {
                 smallIdx = result
                 result = (result + bigIdx) / 2
             }
-            if(smallIdx >= bigIdx || result == smallIdx || result == bigIdx) {
+            if(result >= bigIdx || result <= smallIdx) {
                 break
             }
         }
