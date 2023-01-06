@@ -6,7 +6,7 @@ class Solution {
         var result = costs.lastIndex
         var smallIdx = 0
         var bigIdx = result
-        while (true) {
+        do {
             val costsSum: Long = longCosts.slice(0..result).sum()
             if (costsSum == longCoins) {
                 break
@@ -19,10 +19,7 @@ class Solution {
                 smallIdx = result
                 result = (result + bigIdx) / 2
             }
-            if(result >= bigIdx || result <= smallIdx) {
-                break
-            }
-        }
+        } while (result in (smallIdx + 1) until bigIdx)
         return result + 1
     }
 }
