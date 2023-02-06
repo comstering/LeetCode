@@ -1,12 +1,11 @@
 class Solution {
     fun shuffle(nums: IntArray, n: Int): IntArray {
-        val part1 = nums.slice(0 until n)
-        val part2 = nums.slice(n until nums.size)
-        val result = mutableListOf<Int>()
+        val result = IntArray(nums.size)
+        var index = 0
         for (i in 0 until n) {
-            result.add(part1[i])
-            result.add(part2[i])
+            result[index++] = nums[i]
+            result[index++] = nums[i + n]
         }
-        return result.toIntArray()
+        return result
     }
 }
